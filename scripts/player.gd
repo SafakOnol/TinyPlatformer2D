@@ -23,6 +23,8 @@ func _physics_process(delta):
 		velocity.y = JUMP_VELOCITY
 	var direction = Input.get_axis("move_left", "move_right")
 	
+	if Input.is_action_just_pressed("quit_game"):
+		get_tree().quit()
 	# flip sprite direction
 	if (direction > 0):
 		animated_sprite_2d.flip_h = false

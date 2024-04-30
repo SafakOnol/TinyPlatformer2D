@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ccjqgg8ohoi8r"]
+[gd_scene load_steps=24 format=3 uid="uid://ccjqgg8ohoi8r"]
 
 [ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_f2o42"]
 [ext_resource type="PackedScene" uid="uid://b0tn88tg8xhm2" path="res://scenes/player.tscn" id="1_m2eh7"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://uuv50t0cu1r3" path="res://death_box.tscn" id="5_bdj74"]
 [ext_resource type="PackedScene" uid="uid://cvso24hqptudk" path="res://scenes/slime.tscn" id="6_gvckh"]
 [ext_resource type="FontFile" uid="uid://xb7fvm78ipq0" path="res://assets/fonts/PixelOperator8.ttf" id="8_5pafk"]
+[ext_resource type="Script" path="res://scripts/UIManager.gd" id="10_6d4wo"]
+[ext_resource type="Texture2D" uid="uid://dxgm11kl88lri" path="res://assets/sprites/coin_individual_sprites/tile000.png" id="10_hou2p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iliqh"]
 texture = ExtResource("2_usgke")
@@ -833,5 +835,39 @@ theme_override_colors/font_color = Color(0.0117647, 0.14902, 0.34902, 1)
 theme_override_fonts/font = ExtResource("8_5pafk")
 theme_override_font_sizes/font_size = 8
 text = "Rise..."
+
+[node name="UIManager" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+script = ExtResource("10_6d4wo")
+
+[node name="CoinIcon" type="TextureRect" parent="UIManager"]
+offset_left = 137.0
+offset_top = 5.0
+offset_right = 177.0
+offset_bottom = 45.0
+texture = ExtResource("10_hou2p")
+
+[node name="CoinDisplay" type="Label" parent="UIManager"]
+offset_left = 24.0
+offset_top = 8.0
+offset_right = 132.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("8_5pafk")
+theme_override_font_sizes/font_size = 32
+text = "80 x"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreDisplay" type="Label" parent="UIManager"]
+offset_left = 238.0
+offset_top = 8.0
+offset_right = 346.0
+offset_bottom = 40.0
+theme_override_colors/font_color = Color(1, 0.952941, 0.168627, 1)
+theme_override_fonts/font = ExtResource("8_5pafk")
+theme_override_font_sizes/font_size = 32
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="timeout" from="GameManager/Timer" to="GameManager" method="_on_timer_timeout"]
