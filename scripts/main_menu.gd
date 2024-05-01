@@ -9,6 +9,7 @@ func _ready():
 	play_button.button_up.connect(on_play_released)
 	quit_button.button_up.connect(on_quit_released)
 	
+	
 func on_play_released()->void:
 	get_tree().change_scene_to_packed(start_level)
 	

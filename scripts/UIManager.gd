@@ -15,17 +15,3 @@ func _process(delta):
 	coin_display.text = str(game_manager.coin_collected)
 	score_display.text = str(game_manager.total_score)
 
-
-
-
-###################
-#func _process(delta):
-	#total_score = coin_score + time_score
-	#score_label.text = "Your Score is: " + str(total_score) + ""
-#
-#func add_point():
-	#coin_score += 3
-	#
-#
-#func _on_timer_timeout():
-	#time_score += -1

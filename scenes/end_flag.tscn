@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dp2wug3g3l0yu"]
+
+[ext_resource type="Texture2D" uid="uid://buk413lxx4i2i" path="res://assets/images/flagGreen.png" id="1_1bdcd"]
+[ext_resource type="Script" path="res://scripts/finish.gd" id="1_lgi0b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p5tq7"]
+
+[node name="EndFlag" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_lgi0b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_p5tq7")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+texture = ExtResource("1_1bdcd")
+expand_mode = 1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -7,11 +7,19 @@ const JUMP_VELOCITY = -300.0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+@onready var game_manager = %GameManager
+
 @onready var coyote_timer = $CoyoteTimer
 
 @onready var animated_sprite_2d = $AnimatedSprite2D
 
 @onready var sprite_flip_timer = $Timer
+
+func game_over():
+			#var score = game_manager.total_score
+		game_manager.end_menu.set_score(game_manager.total_score)
+		#game_manager.end_menu.set_high_score(game_manager.total_score)
+		game_manager.end_menu.visible = true
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -25,6 +33,7 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("quit_game"):
 		get_tree().quit()
+		
 	# flip sprite direction
 	if (direction > 0):
 		animated_sprite_2d.flip_h = false
