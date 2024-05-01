@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://cn5an10xf6kj8"]
 
-[ext_resource type="Texture2D" uid="uid://bl2anpirgkoud" path="res://assets/images/bg.png" id="1_1h4p8"]
-[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_7aaj5"]
-[ext_resource type="FontFile" uid="uid://chdvowe0k0cx1" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_6hv8q"]
-[ext_resource type="FontFile" uid="uid://xb7fvm78ipq0" path="res://assets/fonts/PixelOperator8.ttf" id="3_wuixu"]
-[ext_resource type="Script" path="res://scripts/button.gd" id="5_p3osi"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_wlx5c"]
+[ext_resource type="Texture2D" uid="uid://bl2anpirgkoud" path="res://assets/images/bg.png" id="2_cvt7d"]
+[ext_resource type="FontFile" uid="uid://chdvowe0k0cx1" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_wps74"]
+[ext_resource type="FontFile" uid="uid://xb7fvm78ipq0" path="res://assets/fonts/PixelOperator8.ttf" id="4_bd8gf"]
+[ext_resource type="Script" path="res://scripts/button.gd" id="5_4qak3"]
 
 [node name="Main_Menu" type="Control"]
 layout_mode = 3
@@ -13,7 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_7aaj5")
+script = ExtResource("1_wlx5c")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -22,7 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_1h4p8")
+texture = ExtResource("2_cvt7d")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -48,7 +48,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 0, 0.890196, 0.458824)
 theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("2_6hv8q")
+theme_override_fonts/font = ExtResource("3_wps74")
 theme_override_font_sizes/font_size = 64
 text = "COIN HERO"
 horizontal_alignment = 1
@@ -79,10 +79,10 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.237539, 0.237539, 0.237539, 1)
 theme_override_colors/font_hover_color = Color(0.917647, 0.584314, 0.941176, 1)
 theme_override_colors/font_focus_color = Color(0.917647, 0.584314, 0.941176, 1)
-theme_override_fonts/font = ExtResource("3_wuixu")
+theme_override_fonts/font = ExtResource("4_bd8gf")
 theme_override_font_sizes/font_size = 32
 text = "PLAY GAME"
-script = ExtResource("5_p3osi")
+script = ExtResource("5_4qak3")
 
 [node name="Quit_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(288, 64)
@@ -91,6 +91,6 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.237539, 0.237539, 0.237539, 1)
 theme_override_colors/font_hover_color = Color(0.917647, 0.584314, 0.941176, 1)
 theme_override_colors/font_focus_color = Color(0.917647, 0.584314, 0.941176, 1)
-theme_override_fonts/font = ExtResource("3_wuixu")
+theme_override_fonts/font = ExtResource("4_bd8gf")
 theme_override_font_sizes/font_size = 32
 text = "QUIT GAME"
